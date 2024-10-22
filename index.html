@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Introspective Planning: Aligning Robots' Uncertainty with Inherent Task Ambiguity">
+  <meta name="keywords" content="Introspective planning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Introspective Planning: Aligning Robots' Uncertainty with Inherent Task Ambiguity</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/robot.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <!-- <h1 class="title is-1 publication-title"><b><font size="+5">Introspective Planning</font></b>: </br> Aligning Robots' Uncertainty with Inherent Task Ambiguity </br></h1> -->
+          <h1 class="title is-1 publication-title">
+            <b>Introspective Planning:</b>
+            <br>
+            <span style="font-size: 75%;">Aligning Robots' Uncertainty with Inherent Task Ambiguity</span>
+          </h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="//kaiquliang.github.io">Kaiqu Liang</a>,</span>
+            <span class="author-block">
+              <a href="//zzx9636.github.io">Zixu Zhang</a>,</span>
+            <span class="author-block">
+              <a href="//saferobotics.princeton.edu/jaime">Jaime Fernández Fisac</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> Princeton University</span>
+            <br>
+            <span class="author-block"><b style="color:#f41c1c">NeurIPS 2024</b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2402.06529"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2402.06529"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kevinliang888/IntroPlan"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href="https://github.com/kevinliang888/IntroPlan/tree/main/data"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="./static/videos/introplan.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Motivation for Introspective Planning
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered">
+      <div class="column is-one">
+        <h2 class="title is-3">Introduction</h2>
+        <div class="content has-text-justified">
+          <!-- <p>
+            We propose the concept of introspective planning as a systematic method for guiding LLMs in forming uncertainty--aware plans for robotic task execution without the need for fine-tuning. We investigate uncertainty quantification in task-level robot planning and demonstrate that introspection significantly improves both success rates and safety compared to state-of-the-art LLM-based planning approaches. Furthermore, we assess the effectiveness of introspective planning in conjunction with conformal prediction, revealing that this combination yields tighter confidence bounds, thereby maintaining statistical success guarantees with fewer superfluous user clarification queries.
+          </p> -->
+          <p>
+            We propose a novel introspective planning scheme that prompts language-enabled agents to proactively
+            assess their own confidence regarding task compliance and safety for multiple candidate plans, with a guaranteed probability 
+            that the agent will either execute the actions desired by the user or ask an appropriate follow-up question to disambiguate the user's intent.
+            <!-- <br><br> -->
+            We introduce a new, weakly supervised offline knowledge base construction method that guides the LLM to generate 
+            human-aligned introspective reasoning examples as post-hoc rationalizations of human-selected safe-and-compliant plans.
+            We create a new Safe Mobile Manipulation benchmark, which augments previous mobile manipulation datasets with safety-critical scenarios and introduces new metrics to evaluate a planner's specification compliance, safety, and degree of conservativeness.
+            <br><br>
+          </p>
+        </div>
+        <h2 class="title is-4"> Introspective Planning </h2>
+        <img src="./static/images/teaser.jpg" alt="Descriptive Alt Text" style="max-width: 100%; height: auto;">
+        <b> Knowledge base construction:</b> the LLM is prompted to generate knowledge entries based on human-provided instructions and the correct options. 
+        <b>Deployment:</b> Upon receiving an instruction, the LLM formulates possible next steps and consults the knowledge base to retrieve the most relevant examples, which are later used as the prompt for prediction.
+        <br><br><br>
+        <h2 class="title is-4"> Introspective conformal planning </h2>
+        <img src="./static/images/introplan_conformal.png" alt="Descriptive Alt Text" style="max-width: 100%; height: auto;">
+        <!-- <b> Introspective conformal planning </b>  -->
+        After generating multiple options, we query the LLM for the explanation by introspective planning and then ask the model to predict the most correct option.
+         Based on the likelihood scores of true intents from a calibration dataset, conformal prediction finds the quantile value (0.85), and includes any options scoring above 0.15 in the prediction set for each test scenario. 
+         This method guarantees the correct answer is included among the options, at a confidence level specified by the user.
+
+         <!-- <img src="./static/images/safe_mobile.png" alt="Descriptive Alt Text" style="max-width: 100%; height: auto;"> -->
+      </div>
+    </div>
+</section>
+
+
+<!-- Paper video. -->
+<!-- <div class="columns is-centered">
+    <div class="column is-centered">
+    <video id="teaser" autoplay muted loop playsinline controls height="100%">
+        <source src="./static/videos/method.mp4"
+                type="video/mp4">
+        </video>
+    </div>
+</div>
+</div> -->
+
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered">
+        <div class="column is-one">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <p>
+            We compared our approach with KnowNo, both using conformal prediction with an 85% target success rate.  Our method generates explanations via introspective planning before applying conformal prediction, whereas KnowNo directly predicts valid options using conformal prediction. We observed that <b> KnowNo </b> <b> over-step </b>in the left case and <b> over-ask </b> in the right case while <b>IntroPlan generates more precise prediction sets. </b>
+            </p>
+          </div>
+          <img src="./static/images/quality.png" alt="Descriptive Alt Text" style="max-width: 100%; height: auto;">
+          <br><br>
+          <!-- <h2 class="title is-3">Quantiative Results</h2> -->
+          <div class="content has-text-justified">
+            <p>
+            Introspective planning guides the LLM to generate more precise prediction sets, achieving the highest exact set rate and lowest non-compliant contamination rate. It avoids over-asking, rarely oversteps, exhibiting the lowest unsafe rate. This demonstrates effective reasoning about both uncertainty and safety on our new benchmark, <b>safe mobile manipulation</b>.</p>
+          </div>
+          <img src="./static/images/table2.png" alt="Descriptive Alt Text" style="max-width: 100%; height: auto;">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{liang2024introspective,
+        title={Introspective Planning: Guiding Language-Enabled Agents to Refine Their Own Uncertainty},
+        author={Liang, Kaiqu and Zhang, Zixu and Fisac, Jaime Fern{\'a}ndez},
+        journal={arXiv preprint arXiv:2402.06529},
+        year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer" style="padding-bottom: 1.5em; padding-top: 1.5em;">
+    <div class="container">
+      <div class="content has-text-centered">
+        <span>Website based on <a href="https://nerfies.github.io">Nerfies</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
